@@ -1,0 +1,13 @@
+{
+  "name": "javascript-practice",
+  "version": "1.0.0",
+  "main": "1st-practice.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./style.css -o ./dist/output.css",
+    "watch:css": "tailwindcss -i ./style.css -o ./dist/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
