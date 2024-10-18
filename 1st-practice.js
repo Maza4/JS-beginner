@@ -37,37 +37,36 @@ a.push(3);
 console.log(a);
 
 // Task: Managing a waiting List System
-// 1 //
+// 1
 const waitingList = [];
 
 function addCustomerToFront(name) {
-  waitingList.unshift(name);
+  waitingList.unshift(name);j
   return waitingList;
 }
-var updatedWaitingList = addCustomerToFront("Alice");
-console.log(`Add the customer "${updatedWaitingList}" to the end of the list.`);
 
-// 2 //
+// 2
 function addCustomerToEnd(name) {
   waitingList.push(name);
   return waitingList;
 }
-var updatedWaitingList = addCustomerToEnd("Bob");
-console.log(`Add the customer "${updatedWaitingList}" to the end of the list.`);
-
 
 // 3
-function serveFirstCustomer() {
-  waitingList.shift(name);
-  return waitingList;
+function serveFirstCustomer() {j
+  const firstServed = waitingList.shift();
+  return {
+    firstServed,
+    updatedWaitingList: waitingList,
+  };
 }
-var updatedWaitingList = serveFirstCustomer("first");
-console.log(`Serve the "${updatedWaitingList}" customer.`);
 
 // 4
-function serveLastCustomer(name) {
-  waitingList.pop(name);
-  return waitingList;
+function serveLastCustomer() {
+  const secondServed = waitingList.pop();
+  return {
+    secondServed,
+    updatedWaitingList: waitingList,
+  };  h
 }
-var updatedWaitingList = serveLastCustomer("last")
-console.log(`Serve the "${updatedWaitingList}" customer.`);
+
+console.log(waitingList);j
