@@ -8,22 +8,30 @@
     <title>Document</title>
   </head>
   <body>
-    <h1 style="text-align: center; font-size: larger; font-weight: 700; margin-bottom: 30px;">Waiting List</h1>
 
-    <ul class="waitingListDisplay">
+    <div class="container">
+      <h1 class="heading">Waiting List</h1> <!-- Heading -->
+      <hr>
 
-    </ul>
+      <ul id="waitingListDisplay"> <!-- To display the list of customers-->
 
-    <input type="text" id="customerName" placeholder="Enter Customer name"/>
+      </ul>
 
-    <button id="addFrontButton">Add to Front</button>
-    <button id="addEndButton">Add to Front</button>
+      <input type="text" id="customerName" placeholder="Enter Customer name"/>
 
-    <br><br>
+     <div class="add-button">
+      <button class="btn" id="addFrontButton" >Add to Front</button>
+      <button class="btn" id="addEndButton">Add to End</button>
+     </div>
 
-    <button id="serveFirstButton">Serve First Button</button>
-    <button id="serveLastButton">Serve Last Button</button>
+      <br><br>
 
+      <div class="serve-button">
+        <button class="btn" id="serveFirstButton">Serve the first customer</button>
+        <button class="btn" id="serveLastButton">Serve the last customer</button>
+      </div>
+
+    </div>
 
 
     <script src="./1st-practice.js"></script>

@@ -1,3 +1,49 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  background-color: bisque;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  margin: 50px auto;
+  border: 5px solid lightskyblue;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.heading {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: darkgrey;
+}
+
+#customerName {
+  border: 1px solid lightskyblue;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+.btn {
+  border: 1px solid lightskyblue;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: lightblue;
+}

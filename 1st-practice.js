@@ -1,37 +1,77 @@
 // Task: Managing a waiting List System
-// 1
+
+// 1: Create an empty array called waitingList
 const waitingList = [];
 
+function displayWaitingList() {
+  const listElement = document.getElementById("waitingListDisplay");
+  listElement.innerHTML = "";
+
+  // Checking if the waiting list is empty
+  if (waitingList.length === 0) {
+    listElement = "<li>No customers are are waiting.</li>";
+  } else {
+    waitingList.forEach((customer, index) => {
+      const listItem = document.createElement("li");
+      listItem.textContent = `${index + 1}. ${customer}`;
+      listElement.appendChild(listItem);
+    });
+  }
+}
+
+// 2:
 function addCustomerToFront(name) {
-  waitingList.unshift(name);
-  return waitingList;
+  waitingList.unshift(name); // Add customer name to front
+  displayWaitingList();
 }
 
-// 2
+// 4:
 function addCustomerToEnd(name) {
-  waitingList.push(name);
-  return waitingList;
+  waitingList.push(name); // Add customer name to end
+  displayWaitingList();
 }
 
-// 3
+// 5:
 function serveFirstCustomer() {
-  j;
-  const firstServed = waitingList.shift();
-  return {
-    firstServed,
-    updatedWaitingList: waitingList,
-  };
+  if (waitingList.length > 0) {
+    const servedCustomer = waitingList.shift(); //Removes first customer
+    alert(`Served: ${servedCustomer}`); //Alerts the name of the customer served
+    displayWaitingList();
+  } else {
+    alert("No customers to serve.");
+  }
 }
 
-// 4
+// 6:
 function serveLastCustomer() {
-  const secondServed = waitingList.pop();
-  return {
-    secondServed,
-    updatedWaitingList: waitingList,
-  };
-  h;
+  if (waitingList.length > 0) {
+    const servedCustomer = waitingList.pop(); // Removes last customer
+    alert(`Served: ${servedCustomer}`); // Alerts the name of the customer served
+    displayWaitingList();
+  } else {
+    alert("No customers are waiting.");
+  }
 }
 
-console.log(waitingList);
-j;
+document.getElementById("addFrontButton").addEventListener("click", () => {
+  const customerName = document.getElementById("customerName").value;
+  if (customerName) {
+    addCustomerToFront(customerName);
+    document.getElementById("customerName").value = "";
+  }
+});
+
+document.getElementById("addEndButton").addEventListener("click", () => {
+  const customerName = document.getElementById("customerName").value;
+  if (customerName) {
+    addCustomerToEnd(customerName);
+    document.getElementById("customerName").value = "";
+  }
+});
+
+document
+  .getElementById("serveFirstButton")
+  .addEventListener("click", serveFirstCustomer);
+document
+  .getElementById("serveLastButton")
+  .addEventListener("click", serveLastCustomer);
